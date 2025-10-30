@@ -33,17 +33,17 @@ public class TableHandling extends Base{
 		driver.navigate().to("https://selenium.qabible.in/table-pagination.php");
 		//tr - select all tr for column printing because all values are given as row details
 		//list of elements are printing - findElements included in list
-		List<WebElement> rowprinting=driver.findElements(By.xpath("//table[@id='dtBasicExample']//tbody//tr//td[1]"));
-		for(WebElement list:rowprinting) {
+		List<WebElement> columnprinting=driver.findElements(By.xpath("//table[@id='dtBasicExample']//tbody//tr//td[1]"));
+		for(WebElement list:columnprinting) {
 			System.out.println(list.getText());
 		}
 	}
 	//Checking whether Ashton Cox Name is present in the table or not
 	void checkNamePresentOrNot() {
 		driver.navigate().to("https://selenium.qabible.in/table-pagination.php");
-		List<WebElement> rowprinting=driver.findElements(By.xpath("//table[@id='dtBasicExample']//tbody//tr//td[1]"));
+		List<WebElement> check=driver.findElements(By.xpath("//table[@id='dtBasicExample']//tbody//tr//td[1]"));
 		String name="Ashton Cox";
-		for (WebElement n : rowprinting) {
+		for (WebElement n : check) {
             if (n.getText().equalsIgnoreCase(name)) {
                 System.out.println(name + " is present under the Name field of the table.");
             }
